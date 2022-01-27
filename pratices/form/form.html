@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HtmlForm</title>
+    <style>
+        form {
+            background-color: lightblue;
+            padding: 40px;
+            margin: 50px 25%;
+            color: black;
+            border-radius: 2%
+        }
+
+        fieldset {
+            border: 2px solid white;
+        }
+
+        button {
+            background-color: #16b5cb;
+            color: white;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="./submit.html" target="_blank">
+        <div style=" padding: 20px;">
+            <h1 style="text-align: center;"><b>Student Registration Form</b></h1>
+
+            <label style="margin-left: 30rem;" for="date">Date :</label>
+            <input required type="datetime-local" name="date" id="date"><br><br>
+
+            <fieldset>
+                <legend>Personal Information</legend><br>
+                <label for="fname">First name</label>
+                <input autocomplete="off" required placeholder="First name" id="fname" name="fname" autofocus>
+                <label style="margin-left: 2px;" for="mdname">Middle name</label>
+                <input placeholder="Middle name" id="mdname" name="mdname" disabled>
+                <label for="lname">Last name</label>
+                <input autocomplete="off" required placeholder="Last name" id="lname" name="lname">
+                <br><br>
+                <label for="date">Date Of Birth :</label>
+                <input type="date" name="date" id="date">
+                <br><br>
+                <label for="gender">Gender :</label>
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="other">Other</label>
+                <input type="radio" id="other" name="gender" value="Other">
+                <br> <br>
+                <label for="profile">Upload Profile Picture</label>
+                <input type="file" name="profile" id="profile"><br><br>
+                <label for="password">Password :</label>
+                <input type="password" placeholder="Password" id="password" name="password"><br><br>
+                <label for="repass">Re-type Password :</label>
+                <input type="password" placeholder="Re-type Password" id="repass" name="repass">
+                   <br><br>
+                <label for="degree">Hobbies:</label><br>
+                <label for="drawing">Drawing</label>
+                <input type="checkbox" id="drawing" name="drawing">
+                <label for=" singing"> Singing</label>
+                <input type="checkbox" id="singing" name="singing">
+                <label for=" drawing"> Dancing</label>
+                <input type="checkbox" id="drawing" name="drawing">
+                <label for=" sketching"> Sketching</label>
+                <input type="checkbox" id="sketching" name="sketching">
+                <label for=" others"> Others</label>
+                <input type="checkbox" id="others" name="others">
+                <input type="text" placeholder="Ex:- Teaching" max="50">
+                <br><br>
+
+                <br>
+
+            </fieldset>
+
+
+            <br><br>
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="phone">Phone :</label>
+
+                <input autocomplete="off" placeholder="Only 10 digits allowed" type="tel" id="phone" name="phone"
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                <br><br>
+                <label for="address">Current Address :</label> <br>
+                <textarea maxlength="200" name="address" id="address" cols="50" rows="5"></textarea>
+                <br><br>
+                <label for="country">Country :</label>  
+                <input type="text" readonly placeholder="India" id="country" name="country"><br><br>
+                <label for="state">State :</label>  
+                <input type="text" placeholder="State" id="state" name="state"><br><br>
+                <label for="city">City :</label>  
+                <input type="text" placeholder="City" id="city" name="city"><br><br>
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" maxlength="6"  size="6"><br><br>
+                <label for="email">Email :</label>  
+                <input type="email" placeholder="email@mail.com" id="email" name="email">
+                <br><br>
+            </fieldset>
+
+            <br><br>
+
+            <fieldset>
+                <legend>Course Information</legend>
+                <label for="Qualification">Qualification : </label>
+                <input list="Qualification" placeholder="Select">
+                <datalist id="Qualification" name="Qualification">
+                    <option value="High School(10th)">
+                    <option value="Higher School(12th)">
+                    <option value="Graduation"></option>
+                    <option value="Post Graduation"></option>
+                    <option value="Phd"></option>
+                </datalist>
+                <br><br>
+
+                <label for="cgpa">CGPA:</label>
+                <input type="range" id="cgpa" name="cgpa" min="1" max="11"> 
+                 <br><br>
+                <label for="profile">Upload Qualification Documents : </label>
+                <input type="file" name="profile" id="profile" multiple><br><br>
+
+                <label for="course">Course :</label>
+                <select name="couse" id="course">
+                    <option value="BBA">BBA</option>
+                    <option value="MBA">MBA</option>
+                    <option value="BCA">BCA</option>
+                    <option value="BTech">BTech</option>
+                    <option value="MTech">MTech</option>
+                    <option value="BSc">BSc</option>
+                    <option value="mCS">MSc</option>
+                </select>
+                <br> <br>
+
+                <label for="Department">Department : </label>
+                <input list="Department" placeholder="Select">
+                <datalist id="Department" name="Department">
+                    <option value="Part Time">
+                    <option value="Full Time">
+                    <option value="Other"></option>
+                </datalist>
+                <br><br>
+
+                <label for="degree">Degree Applied:</label>
+                <label for="bachel">Bachelor</label>
+                <input type="checkbox" id="bachel" name="bachel">
+                <label for=" master"> Master</label>
+                <input type="checkbox" id="master" name="master">
+                <label for=" phd"> Phd</label>
+                <input type="checkbox" id="phd" name="phd">
+                <br><br>
+            </fieldset>
+
+            <br><br>
+            <button type="submit">submit</button>
+            <button style="margin-left: 20px;" type="reset">reset</button>
+        </div>
+    </form>
+
+
+</body>
+
+</html>
