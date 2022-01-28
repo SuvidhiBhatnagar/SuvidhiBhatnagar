@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
+}
+
+/* Navbar section */
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./header.png);
+    background-position: center;
+    background-size: cover;         
+}
+
+nav{
+   
+    background-color: #442d83;
+}
+
+.navbar{
+    display :flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0% 5%;
+}
+
+.nav-link{
+    flex: 1;
+    text-align: right;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+nav img{
+    width: 90px;
+}
+
+.button{
+    border: 1px solid orange;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    padding: inherit;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* Carousal styling */
+
+.Hero{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+   color: white;
+   justify-content: space-between;
+   margin: 16% 10%;
+
+}
+
+
+
+.Hero p{
+    color: #c5c0c0;;
+}
+.Hero h1{
+    font-size: 36px;
+}
+
+.learn{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.9rem;
+ 
+}
+
+.learn a{
+    color: white;
+    text-decoration: none;
+
+}
+
+.LearnMore{
+    background-color: #442d83;
+    padding: 10px;
+}
+
+.See{
+    padding: 10px;
+}
+
+/* About section */
+.About{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row ;
+  background-color: rgb(43, 43, 104);
+  padding: 30px;
+  justify-content: space-around;
+}
+
+.about1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about3{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.abouthead{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.aboutfoot{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.abouthead h5{
+    color: rgb(235, 189, 104);
+}
+.abouthead span{
+    color: white;
+}
+
+
+.aboutfoot h5{
+    color: rgb(235, 189, 104);
+}
+.aboutfoot span{
+    color: white;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgb(43, 43, 104) ;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+
+.btn1{
+    background-color: transparent ;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding: 10px 18px;
+    font-size: 15px;
+}
+/* Footer section */
+
+.Footer{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #442d83;
+    padding: 30px;
+    color: white;
+    font-size: 10px;
+    justify-content: space-between;
+}
+
+.footericon{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.Footer a{
+    text-decoration: none;
+}
+.Footer li{
+   list-style-type: none;
+}
+
+.footerbtn{
+    border: 1px solid white;
+    border-radius: 18px;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+}
+/* media queries */
+@media screen and (max-width:880px) {
+    .header{
+        height:550px;
+    }
+    .Hero h1{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .Hero h1{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width:433px) {
+    .Hero h1{
+        font-size: 20px;
+    }
+
+    .Hero p{
+        font-size: 10px;
+    }
+}
+
+
+
+
+
+/* @media screen and (min-width: 768px) and (max-width: 1024px)  {
+    .header{
+        height: 700px;
+        background-position: initial;
+    }
+    .Hero h1{
+        color: firebrick;
+    }
+    .navbar{
+        margin: 0px;
+    }
+    
+} */
+
+/* @media screen and ( min-width: 320px) and (max-width: 766px)  {
+    .header{
+        background-size: cover;
+    }
+    .Hero{
+        margin: 20% 10%;
+   }
+    .Hero h1{
+        font-size: 25px !important;
+        color: green;
+    }
+    
+} */
