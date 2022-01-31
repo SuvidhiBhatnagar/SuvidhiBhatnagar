@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+   }
+
+   @media screen and (max-width: 470px){
+    body{
+   
+        color: white;
+    }
+    
+    .header{
+        top: 0%;
+        width: 100%;
+        position: fixed;
+        background-color: #be302c;
+        padding: 15px;
+    }
+    .header h1{
+        font-size: 15px;
+    }
+
+    .logo img{
+        width: 50px;
+        border-radius: 50%
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: space-between;
+    }
+    .main{
+        color: black;
+        margin-top: 30%;
+        margin-bottom: 30%;
+    }
+    .top{
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        padding: 20px;
+    }
+    .date{
+        width: fit-content;
+        background-color: #be302c ;
+        color: white;
+        padding: 8px;
+    }
+    .head h1{
+        font-size: 20px;
+        color: #be302c ;
+    }
+    .foot{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+       color: grey;
+    }
+    .icon{
+        display: flex;
+        gap: 1.5rem;
+    }
+    .footer{
+        bottom: 0%;
+        width: 100%;
+        position: fixed;
+        color: grey;
+    }
+    footer{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: space-between;
+        padding: 20px;
+        background: white;
+    }
+    .btn{
+        display: flex;
+        flex-direction: column;
+        bottom: 2px;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    a{
+        color: grey;
+        text-decoration: none;
+    }
+    a:link {
+        color: #be302c;
+      }
+    hr{
+        margin: 10px;
+    }
+}

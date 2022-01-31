@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+   }
+
+   @media screen and (max-width: 470px){
+    .header{
+        position: sticky;
+        top: 1%;
+        margin: 10px;
+    }
+    .header a{
+        color: #be302c;
+    }
+    .main{
+        color: black;
+        margin-top: 20%;
+        margin-bottom: 30%;
+    }
+    .logo img{
+        width: 30px;
+        border-radius: 50%
+    }
+    .logo{
+        margin: 10% 20px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .main p{
+        margin: 10% 20px;
+    }
+    .middle{
+        display: flex;
+        flex-direction: column;
+        margin: 10% 20px;
+        gap: 2.5rem ;
+    }
+    .link{
+        flex-direction: column;
+    }
+    .middle a{
+        color: #be302c;
+    }
+    .middle div{
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer{
+        bottom: 0%;
+        width: 100%;
+        position: fixed;
+        color: grey;
+    }
+    footer{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: space-between;
+        padding: 20px;
+        background: white;
+    }
+    .footbtn{
+        display: flex;
+        flex-direction: column;
+        bottom: 2px;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    footer a{
+        color: grey;
+        text-decoration: none;
+    }
+    a:link {
+        color: #be302c;
+      }
+    .btn{
+        background-color: #be302c;
+        padding: 20px;
+        font-weight:800;
+        text-align: center;
+        
+      }
+    /* CHOOSE */
+    .checkbox{
+        margin: 10%;
+    }
+    form{
+        gap: 0.5rem;
+    }
+    .footer button{
+        border: none;
+        background: transparent;
+        color: white;
+    }
+}
