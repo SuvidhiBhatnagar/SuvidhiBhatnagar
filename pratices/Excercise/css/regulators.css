@@ -15,7 +15,7 @@
     }
     .main{
         margin-top: 20%;
-        margin-bottom: 50%;
+        margin-bottom: 20%;
     }
     .main h1{
        margin: 10%;
@@ -59,7 +59,7 @@
     .footer{
         bottom: 0%;
         width: 100%;
-        position: fixed;
+        position: sticky;
         color: grey;
     }
     footer{
