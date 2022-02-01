@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>Notification page</title>
+</head>
+
+<body>
+    <section class="header">
+        <a href="settings.html"><i class="fas fa-chevron-left"></i></a>
+    </section>
+    <section style="margin-top: 20%;" class="main">
+        <h1 style="text-align: center;  color: #be302c;">NOTIFICATION SETTINGS</h1>
+        <form class="form" action="settings.html">
+            <div>
+                <input type="radio" id="none" name="notification" value="None" required>
+                <label for="none">None</label><br>
+            </div>
+            <div>
+                <input type="radio" id="daily" name="notification" value="Daily Email" required>
+                <label for="daily">Daily Email</label><br>
+            </div>
+            
+            <div  class="btn">
+                <button style="margin-left: 40%;" type="submit">Update</button>
+            </div>
+        </form>
+    </section>
+    <section class="footer">
+        <footer>
+
+            <div class="footbtn">
+                <i style="font-size: 20px;" class="fas fa-home"></i>
+                <a href="home.html">Home</a>
+            </div>
+            <div class="footbtn">
+                <i style="font-size: 20px; " class="far fa-bookmark"></i>
+                <a href="bookmarks.html">Bookmarks</a>
+            </div>
+            <div class="footbtn">
+                <i style="font-size: 20px; color: #be302c;" class="fas fa-sliders-h"></i>
+                <a href="#" style="color: #be302c;">Settings</a>
+            </div>
+
+        </footer>
+</body>
+
+</html>

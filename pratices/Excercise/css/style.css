@@ -7,7 +7,7 @@
 
 
 
-@media screen and (max-width: 470px){
+@media screen and (max-width: 430px){
     body{
         background-color: #be302c;
         color: white;
@@ -17,34 +17,36 @@
         position: sticky;
         padding: 20px;
     }
-    .header h1{
-        font-size: 25px;
-    }
+    
 
     .logo img{
-        width: 50px;
+       max-width: 40px;
         border-radius: 50%
     }
     
     nav{
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        gap: 0.5rem;
+        
     }
     .main{
-        padding: 20px;
+        padding: 30px;
         display: flex;
         flex-direction: column;
-        gap: 2.5rem;
-        margin-top: 40px;
+        margin-top: 50px;
     }
     .btn{
+      margin: 20px 0px;
       background-color: white;
       padding: 20px;
       font-weight:800;
       text-align: center;
       
+    }
+    .main p{
+        text-align: center;
+        margin-bottom: 50px;
     }
     .main a{
         color: #be302c;
@@ -61,7 +63,7 @@
 
 @media screen and (max-width: 350px){
     .header h1{
-        font-size: 18px;
+      margin: 20px;
     }
 }
 
