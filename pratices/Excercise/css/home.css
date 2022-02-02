@@ -2,51 +2,49 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
+    
    }
 
-   @media screen and (max-width: 430px){
-  
-    .header{
-        top: 0%;
-        width: 100%;
-        position: sticky;
-        background-color: #be302c;
-        padding: 15px;
-    }
-    .header h1{
-        color: white;
-        margin-left: 10px;
-        font-size: 15px;
+   body{
+    overflow: hidden;
+   }
+   
+
+   /* header css */
+   .header{
+    top: 0%;
+    width: 100%;
+    position: sticky;
+    background-color: #be302c;
+    padding: 15px;
+}
+
+.header h1{
+    font-size: 25px;
+    color: white;
+    margin-left: 10px;
+}
+
+.logo img{
+    max-width: 50px;
+    border-radius: 50%
+}
+.logo{
+    display: flex;
+    align-items: center;
+   
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* main css */
+    .main{
+        margin: 120px 80px;
     }
 
-    .logo img{
-        max-width: 40px;
-        border-radius: 50%
-    }
-    .logo{
-        display: flex;
-        align-items: center;
-       
-    }
-    nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .main{
-        
-        margin-top: 20%;
-    }
-    .main p{
-        color: black;
-    }
-    .top{
-        margin: 20px;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-    }
     .head{
         margin-top: 10px;
         margin-bottom: 10px;
@@ -58,8 +56,12 @@
         padding: 8px;
     }
     .head h1{
-        font-size: 20px;
         color: #be302c ;
+    }
+    .head p{
+        margin-top: 10px;
+        color: black;
+       font-size: 20px;
     }
     .foot{
         display: flex;
@@ -71,34 +73,124 @@
         display: flex;
         gap: 1.5rem;
     }
-    .footer{
-        bottom: 0%;
-        width: 100%;
-        position: sticky;
-        color: grey;
+
+    /* footer css */
+.footer{
+    bottom: 1px;
+    width: 100%;
+    position: sticky;
+    color: grey;
+    background-color:  rgb(223, 215, 215);;
+}
+footer{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+    bottom: 2px;
+    align-items: center;
+    gap: 0.5rem;
+}
+a{
+    color: grey;
+    text-decoration: none;
+}
+a:link {
+    color: #be302c;
+  }
+hr{
+    margin: 10px;
+}
+.top{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+   @media screen and (max-width: 470px){
+  
+    body{
+        overflow: scroll;
+       }
+
+   .header h1{
+    font-size: 15px;
+   }
+    .main{
+        margin: 10% ;
     }
-    footer{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px;
-        background: white;
+    .main p{
+        color: black;
     }
-    .btn{
+    .top{
+        margin: 0px;
         display: flex;
         flex-direction: column;
-        bottom: 2px;
-        align-items: center;
-        gap: 0.5rem;
+        padding: 20px;
     }
-    a{
-        color: grey;
-        text-decoration: none;
+    .head{
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
-    a:link {
-        color: #be302c;
-      }
-    hr{
-        margin: 10px;
+    .head p{
+        font-size: 15px;
+    }
+    .date{
+        width: fit-content;
+        background-color: #be302c ;
+        color: white;
+        padding: 8px;
+    }
+    .head h1{
+        font-size: 20px;
+    }
+    .foot{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+       color: grey;
+    }
+    .icon{
+        display: flex;
+        gap: 1.5rem;
     }
 }
+
+@media screen and (min-width: 540px) and (max-width: 800px){
+    body{
+        overflow: scroll;
+    }
+    
+    .main p{
+        color: black;
+    }
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 915px){
+
+    .main{
+        margin : 280px 80px;
+    }
+   
+}
+
+@media screen and (min-width: 915px) and (max-width: 1280px){
+  
+    body{
+        overflow: scroll;
+    }
+   .main{
+       margin: 0px;
+   }
+}
+
+

@@ -4,91 +4,126 @@
     box-sizing: border-box;
    
    }
-   @media screen and (max-width: 430px){
-       body{
-           overflow: hidden;
-       }
-    .header{
-        position: sticky;
-        top: 1%;
-        margin: 10px;
-    }
-    .header a{
-        color: #be302c;
-    }
-    .main{
-        display: flex;
-        flex-direction: column;
-        margin: 20px;
-        gap: 1.5rem;
-        min-height: 80vh
-    }
-    .main a{
-        color: #be302c;
-        text-align: center;
-    }
-    form{
 
-        display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
-    }
-    .form{
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .form div{
-        display: flex;
-        gap: 0.5rem;
-        
-    }
-    input{
-        border: none;
-        border-bottom: 2px solid grey;
-    }
-    .btn{
-        margin-top: 20px;
-        background-color: #be302c;
-        color: white;
-        padding: 10px;
-   font-weight:800;
-   text-align: center;
-   width: 100%;
-    }
-    button{
-        background-color: transparent;
-           border: none;
-           color: white;
-           font-size: 15px;
-       }
-       .footer{
-        bottom: 0%;
-        width: 100%;
-        position: sticky;
-        color: grey;
+   body{
+    overflow: hidden;
+}
+
+.header{
+    position: sticky;
+    top: 1%;
+    margin: 10px;
+}
+.header a{
+    color: #be302c;
+}
+
+/* main css */
+.main{
+    margin-top: 100px;
+    color: black;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  
+}
+form{
+     margin: 10px 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.form div{
+    display: flex;
+    gap: 0.5rem;
+    
+}
+input{
+    border: none;
+    border-bottom: 2px solid grey;
+}
+.btn{
+    margin-top: 20px;
+    background-color: #be302c;
+    color: white;
+    padding: 10px;
+font-weight:800;
+text-align: center;
+width: 100%;
+}
+button{
+    background-color: transparent;
+       border: none;
+       color: white;
+       font-size: 15px;
+   }
+
+/* footer css */
+.footer{
+    bottom: 1px;
+    width: 100%;
+    position: sticky;
+    color: grey;
+    background-color:  rgb(223, 215, 215);;
+}
+footer{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+.btn{
+    display: flex;
+    flex-direction: column;     
+    align-items: center;
+    gap: 0.5rem;
+}
+.footbtn{
+    display: flex;
+    flex-direction: column;
+    bottom: 2px;
+    align-items: center;
+    gap: 0.5rem;
+}
+footer a{
+    color: grey;
+    text-decoration: none;
+}
+a:link {
+    color: #be302c;
+  }
+
+   @media screen and (max-width: 430px){
+       
+    .main h1{
+        font-size: 18px;
     }
     footer{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         padding: 20px;
-        background: white;
     }
-    .footbtn{
-        display: flex;
-        flex-direction: column;
-        bottom: 2px;
-        align-items: center;
-        gap: 0.5rem;
+   
+   
+}
+
+
+/* @media screen and (min-width: 540px) and (max-width: 800px){
+
+} */
+
+
+@media screen and (min-width: 800px) and (max-width: 915px){
+    .header a{
+        font-size: 30px;
     }
-    footer a{
-        color: grey;
-        text-decoration: none;
-    }
-    a:link {
-        color: #be302c;
-      }
-      
+  .main{
+      font-size: 20px;
+  }
 }

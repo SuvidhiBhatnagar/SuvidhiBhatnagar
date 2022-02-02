@@ -4,76 +4,120 @@
     box-sizing: border-box;
    
    }
+   .header{
+    position: sticky;
+    top: 1%;
+    margin: 10px;
+}
+.header a{
+    color: #be302c;
+}
 
-   @media screen and (max-width: 470px){
-       .header{
-           position: sticky;
-           top: 1%;
-           margin: 10px;
-       }
-       .header a{
-           color: #be302c;
-       }
-       .main{
-           display: flex;
-           flex-direction: column;
-           margin: 20px;
-        min-height: 90vh;
-       }
-       .main a{
-           margin-top: 10px;
-           color: #be302c;
-           text-align: center;
-       }
-       form{
-           margin-top: 20%;
-           display: flex;
-           flex-direction: column;
-       }
-       input{
-        margin-bottom: 10%;
-           border: none;
-           border-bottom: 2px solid grey;
-       }
-       .terms{
-           margin-top: 20px;
-           display: flex;
-           justify-content: space-evenly;
-           align-items: baseline;
-         
-       }
-       .terms span{
-        margin-left: 10px;
-       }
-       .btn{
-           position: fixed;
-           bottom: 2px;
-           background-color: #be302c;
-           color: white;
-           padding: 10px;
-      font-weight:800;
-      text-align: center;
-      width: 100%;
-       }
-       button{
-        background-color: transparent;
-           border: none;
-           color: white;
-           font-size: 15px;
-       }
-       hr{
-        margin-left: 32%;
-         position: fixed;
-         bottom: 4px;
-         width: 8rem;
-         height: 2px;
-     }
-   }
-   @media screen and (max-width: 300px){
-    .btn{
+/* main */
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20%;
+}
+.main h1{
+    font-size: 40px;
+}
+.main a{
+    margin-top: 10px;
+    color: #be302c;
+    text-align: center;
+}
+form{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+input{
+    
+ margin-bottom: 5%;
+    border: none;
+    border-bottom: 2px solid grey;
+}
+.terms{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+   gap: 0.5rem;
+    align-items: baseline;
+  
+}
+.terms span{
+ margin-left: 10px;
+}
+.btn{
+    margin: 20px;
+    position: sticky;
+    background-color: #be302c;
+    color: white;
+    padding: 10px;
+font-weight:800;
+text-align: center;
+width: 100%;
+}
+button{
+ background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+}
+hr{
+ margin-left: 30% !important;
+  position: fixed;
+  bottom: 4px;
+  height: 2px;
+}
+@media (max-width: 780px){
+    body{
+        overflow: scroll;
+    }
+    .header{
         position: sticky;
+        top: 1%;
+        margin: 10px;
     }
-    hr{
-        margin-left: 25%;
+    .header a{
+        color: #be302c;
     }
-   }
+    .main{
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+       
+    }
+    .main h1{
+        font-size: 25px;
+    }
+    .main a{
+        color: #be302c;
+        text-align: center;
+    }
+    form{
+        margin: 60px 20px;
+    }
+    input{
+        padding: 10px;
+        margin-bottom: 10%;
+        border: none;
+        border-bottom: 2px solid grey;
+    }
+    .btn{
+        left: 0;
+        bottom: 0px;
+        width: 100%;
+    }
+    
+    
+}
+
+@media (max-width: 1024){
+    input{
+        padding: 10px;
+    }
+}
+   
+   

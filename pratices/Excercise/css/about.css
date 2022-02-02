@@ -4,87 +4,140 @@
     box-sizing: border-box;
    
    }
+   body{
+    overflow: hidden;
+}
+.header{
+    position: sticky;
+    top: 1%;
+    margin: 10px;
+}
+.header a{
+    color: #be302c;
+}
+
+/* main */
+
+.main{
+    color: black;
+    margin-top: 20px;
+    min-height: 80vh
+}
+.logo img{
+    width: 30px;
+    border-radius: 50%
+}
+
+.logo{
+    margin: 5% 40px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.main p{
+    margin: 5% 40px;
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    margin: 5% 40px;
+    gap: 2.5rem ;
+}
+.link{
+    flex-direction: column;
+}
+.middle a{
+    color: #be302c;
+}
+.middle div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* footer css */
+
+.footer{
+    bottom: 1px;
+    width: 100%;
+    position: sticky;
+    color: grey;
+    background-color:  rgb(223, 215, 215);;
+}
+footer{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+.btn{
+    display: flex;
+    flex-direction: column;     
+    align-items: center;
+    gap: 0.5rem;
+}
+.footbtn{
+    display: flex;
+    flex-direction: column;
+    bottom: 2px;
+    align-items: center;
+    gap: 0.5rem;
+}
+footer a{
+    color: grey;
+    text-decoration: none;
+}
+a:link {
+    color: #be302c;
+  }
 
    @media screen and (max-width: 430px){
-       body{
-           overflow: hidden;
+       .logo{
+           margin-top: 60px;
        }
-    .header{
-        position: sticky;
-        top: 1%;
-        margin: 10px;
-    }
-    .header a{
-        color: #be302c;
+       .main{
+           font-size: 12px;
+       }
+       main p{
+           font-size: 10px;
+       }
+    
+  
+   
+}
+
+@media screen and (min-width: 540px) and (max-width: 800px){
+    .logo{
+        margin-top: 60px;
     }
     .main{
-        color: black;
-        margin-top: 20%;
-        min-height: 80vh
+        margin-top: 80px;
+        font-size: 20px;
     }
-    .logo img{
-        width: 30px;
-        border-radius: 50%
-    }
-    .logo{
-        margin: 10% 20px;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    .main p{
-        margin: 10% 20px;
-    }
-    .middle{
-        display: flex;
-        flex-direction: column;
-        margin: 10% 20px;
-        gap: 2.5rem ;
-    }
-    .link{
-        flex-direction: column;
-    }
-    .middle a{
-        color: #be302c;
-    }
-    .middle div{
-        display: flex;
-        justify-content: space-between;
-    }
-    .footer{
-        bottom: 0%;
-        width: 100%;
-        position: sticky;
-        color: grey;
+    main p{
+        font-size: 20px;
     }
     footer{
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        justify-content: space-between;
-        padding: 20px;
-        background: white;
+        margin-top: 100px;
     }
-    .footbtn{
-        display: flex;
-        flex-direction: column;
-        bottom: 2px;
-        align-items: center;
-        gap: 0.5rem;
+}
+
+@media screen and (min-width: 800px) and (max-width: 915px){
+    .logo{
+        margin-top: 60px;
     }
-    footer a{
-        color: grey;
-        text-decoration: none;
+    .main{
+        margin-top: 80px;
+        font-size: 30px;
     }
-    a:link {
-        color: #be302c;
-      }
-    .btn{
-        background-color: #be302c;
-        padding: 20px;
-        font-weight:800;
-        text-align: center;
-        
-      }
-   
+    .main h1{
+        margin-top: 90px;
+    }
+    main p{
+        font-size: 20px;
+    }
+    footer{
+        margin-top: 150px;
+    }
 }
