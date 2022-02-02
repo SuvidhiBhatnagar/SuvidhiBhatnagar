@@ -30,7 +30,8 @@ form{
 
 }
 input{
-    margin-bottom: 10%;
+    padding: 10px;
+    margin-bottom: 3%;
     border: none;
     border-bottom: 2px solid grey;
 }

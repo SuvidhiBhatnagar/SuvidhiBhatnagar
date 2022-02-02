@@ -33,8 +33,8 @@ form{
     flex-direction: column;
 }
 input{
-    
- margin-bottom: 5%;
+    padding: 10px;
+ margin-bottom: 3%;
     border: none;
     border-bottom: 2px solid grey;
 }

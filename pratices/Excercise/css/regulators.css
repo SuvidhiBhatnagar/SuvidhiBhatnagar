@@ -61,12 +61,11 @@ button{
 .footer{
     bottom: 1px;
     width: 100%;
-    position: sticky;
+    position: fixed;
     color: grey;
     background-color:  rgb(223, 215, 215);;
 }
 footer{
-    margin-top: 300px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -81,7 +80,7 @@ footer{
 .footbtn{
     display: flex;
     flex-direction: column;
-    bottom: 2px;
+    bottom: 23px;
     align-items: center;
     gap: 0.5rem;
 }
@@ -110,11 +109,7 @@ a:link {
     }
 
     footer{
-        margin-top: 100px;
         padding: 20px;
-    }
-    .btn{
-        bottom: 12%;
     }
 }
     
@@ -130,9 +125,6 @@ a:link {
         flex-wrap: wrap;
         justify-content: space-between;
         margin: 50px 16%;
-    }
-    footer{
-        margin-top: 440px;
     }
  
 }
@@ -152,24 +144,12 @@ a:link {
       display: flex;
       gap: 0.9rem;
   }
-  footer{
-      margin-top: 600px;
-  }
-  .btn{
-      bottom: 10%;
-  }
 }
 
 @media screen and (min-width: 920px) and (max-width: 1280px){
     body{
         overflow: scroll;
     }
-    footer{
-        margin-top: 200px;
-    }
-   .btn{
-       bottom: 11%;
-   }
  
 }
 
