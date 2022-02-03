@@ -60,7 +60,7 @@ dd{
 .footer{
     bottom: 1px;
     width: 100%;
-    position: sticky;
+    position: fixed;
     color: grey;
     background-color:  rgb(223, 215, 215);;
 }
