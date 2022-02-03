@@ -88,6 +88,7 @@ footer{
     
 }
 .btn{
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     bottom: 2px;
@@ -97,6 +98,7 @@ footer{
 a{
     color: grey;
     text-decoration: none;
+    cursor: pointer;
 }
 a:link {
     color: #be302c;
