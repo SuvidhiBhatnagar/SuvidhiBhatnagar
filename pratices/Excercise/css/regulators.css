@@ -18,6 +18,9 @@
 }
 
 /* main css */
+.main{
+    font-size: 20px;
+}
 
 .main h1{
     margin-top: 60px;
@@ -94,6 +97,10 @@ a:link {
 
 
    @media screen and (max-width: 540px){
+       .main{
+           
+    font-size: 12px;
+       }
     .row{
         display: flex;
         flex-wrap: wrap;

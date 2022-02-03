@@ -64,6 +64,9 @@ button{
        color: white;
        font-size: 15px;
    }
+.form label{
+    font-size: 20px;
+}
 
 /* footer css */
 .footer{
@@ -108,6 +111,9 @@ a:link {
     }
     footer{
         padding: 20px;
+    }
+    .form label{
+        font-size: 12px;
     }
    
    
