@@ -1,219 +1,412 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 /* Navbar section */
-.header{
-    height: 700px;
-    width: 100%;
-    background-image: url(./images/carousal.jpg);
-    opacity: 0.8;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+.header {
+  height: 500px;
+  width: 100%;
+  background-image: url(./images/carousal.jpg);
+  opacity: 0.8;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-nav{
-   
-    background-color: white;
+nav {
+  background-color: white;
 }
 
-.navbar{
-    display :flex;
-    padding: 15px;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0% 5%;
+.navbar {
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0% 5%;
 }
 
-.nav-link{
-    flex: 1;
-    text-align: right;
+.nav-link {
+  flex: 1;
+  text-align: right;
 }
 
 .navbar ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 10px;
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
 }
 
-nav img{
-    width: 90px;
+nav img {
+  width: 90px;
 }
 
 nav a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
-nav a:hover{
-    color: red;
+nav a:hover {
+  color: red;
 }
 
+/* Carousel section */
 
-  /* Carousel section */
+.Carousel {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: white;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+  margin: 20% 0px;
+}
 
-  .Carousel{
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-     color: white;
-     justify-content: space-between;
-     margin: 16% 10%;
+.Carousel h1 {
+  font-size: 36px;
+}
 
-  }
+.Carousel a {
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  width: fit-content;
+  background-color: red;
+}
 
-  
+.Carousel a span {
+  padding: 10px;
+}
 
-  .Carousel h1{
-      font-size: 36px;
-  }
+.red {
+  color: red;
+}
 
-  .Carousel a{
-      margin-top: 20px;
-      text-decoration: none;
-      color: white;
-      padding: 10px;
-      width: fit-content;
-      background-color: red;
-  }
-
-  .Carousel a span{
-      padding: 10px;
-  }
-
-  .red{
-      color: red;
-  }
-
-  @media (max-width : 700px){
-      .Carousel h1{
-          font-size: 20px;
-      }
-      .Carousel{
-          font-size: 10px;
-      }
-  }
 /* About us section */
 
-  .about{
-    display: flex; 
-     flex-wrap: wrap;
-      gap: 1.9rem;
-      padding: 6% 6%;
-     color: black;
-     justify-content: space-between;
-     align-items: center;
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.9rem;
+  padding: 6% 6%;
+  color: black;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  }
+.about img {
+  width: 300px;
+  height: 300px;
+}
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
 
-  .side{
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-  .side h1{
-      border-bottom: 2px solid red;
-      left: 25px;
-  }
-  
-  .about a{
-      text-decoration: none;
-      color: white;
-      padding: 20px;
-      width: 7rem;
-      background-color: red;
-  }
+.sideline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
+.aboutline {
+  width: 3rem;
+  background-color: red;
+  height: 2px;
+}
+.about a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  width: fit-content;
+  background-color: red;
+}
 
+/* services section */
+.services {
+  padding: 6% 6%;
+  background-color: #221f25;
+  color: white;
+  display: flex;
+  gap: 0.9rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  /* services section */
-  .services{
-      padding: 6% 6%;
-      background-color: #221f25;
-      color: white;
-      display: flex;
-      gap: 0.9rem;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-  }
+.services h1 {
+  font-size: xx-large;
+}
 
-  .third-layer{
-      color: grey;
-  }
+.serviceline {
+  width: 19rem;
+  height: 2px;
+  background-color: red;
+}
 
- .card{
-     margin-top: 20px;
-     display: flex;
-     padding: 20px;
-     gap: 4.9rem;
- }
+.third-layer {
+  color: grey;
+}
 
-  .container {
-    padding: 20px;
-    box-shadow: 0 0px 8px 0 white;
-  }
+.card {
+  margin-top: 20px;
+  display: flex;
+  padding: 20px;
+  gap: 4.9rem;
+}
 
-  .container p {
-      margin-top: 20px;
-      margin-bottom: 10px;
-  }
+.container {
+  padding: 20px;
+  box-shadow: 0 0px 8px 0 white;
+}
 
-  /* Contact-us section */
+.container p {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 
-  .contact{
-    display: flex;
-    flex-direction: column;
-    /* width: 1920px;
+/* Contact-us section */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  /* width: 1920px;
     height: 920px; */
-    padding: 150px;
-    background-image: url('./images/contact.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    opacity: 0.9;
-    color: white;
-    gap: 0.5rem;
+  padding: 150px;
+  background-image: url("./images/contact.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.9;
+  color: white;
+  gap: 0.5rem;
+  align-items: center;
+}
+.line {
+  width: 9rem;
+  height: 2px;
+  background-color: red;
+  margin-bottom: 10px;
+}
+
+.contact h1 {
+  font-size: xxx-large;
+}
+.contact a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  width: fit-content;
+  background-color: red;
+}
+/* footer section */
+.Footer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+  gap: 0.9rem;
+  /* padding: 20px; */
+  color: black;
+}
+
+.Footer h1 {
+  color: red;
+}
+
+.footer1 img {
+  width: 20%;
+}
+
+.footer1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer2-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer3 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Footer-bootom {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: grey;
+  color: white;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+/* media queries */
+/* laptop screen */
+@media (min-width: 1022px) {
+  .Carousel h1 {
+    font-size: 25px;
+  }
+  .Carousel {
+    font-size: 18px;
+    margin: 9% 0px;
+  }
+  .about {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .card {
+    display: flex;
+    padding: 0px;
+    font-size: 10px;
+  }
+  .container h1 {
+    font-size: 20px;
+  }
+
+  .contact h1 {
+    font-size: x-large;
+  }
+  .Footer {
+    display: flex;
+    font-size: small;
+    justify-content: space-evenly;
+  }
+}
+@media (max-width: 830px) {
+  .Carousel h1 {
+    font-size: 30px;
+  }
+  .Carousel {
+    font-size: 18px;
+  }
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .contact {
+    font-size: 18px;
+  }
+  .contact h1 {
+    font-size: 30px;
+  }
+  .contact a {
+    width: fit-content;
+  }
+}
+
+/* tablet screen */
+
+@media (max-width: 600px) {
+  .header {
+    height: 500px;
+  }
+  .Carousel h1 {
+    font-size: 25px;
+  }
+  .Carousel {
+    font-size: 12px;
+  }
+  .about img {
+    max-width: 400px;
+    height: 400px;
+  }
+  .contact {
+    font-size: 10px;
     align-items: center;
   }
-
-
-  .contact a{
-    text-decoration: none;
-    color: white;
-    padding: 10px;
-    width: 7rem;
-    background-color: red;
+  .contact h1 {
+    font-size: 12px;
   }
-  /* footer section */
-  .Footer{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row ;
-      padding: 20px;
-      color: black;
-  }
+}
 
-  .footer1 img{
-      width: 20%;
-  }
+/* Mobile screen */
 
-  .footer1{
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
+@media (max-width: 435px) {
+  .nav-link {
+    display: none;
   }
-
-  
-  .footer2{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+  .header {
+    height: 400px;
   }
-
-  .footer3{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+  .Carousel h1 {
+    font-size: 15px;
   }
+  .Carousel {
+    font-size: 12px;
+    margin: 12% 0px;
+    padding: 20px;
+  }
+  .side {
+    font-size: 10px;
+  }
+  .about img {
+    max-width: 200px;
+    height: 200px;
+  }
+  .services {
+    font-size: 10px;
+  }
+  .services h1 {
+    font-size: large;
+  }
+  .contact {
+    font-size: 12px;
+    align-items: center;
+    height: 300px;
+    padding: 45px;
+  }
+  .contact h1 {
+    font-size: 18px;
+  }
+  .contact span {
+    font-size: 10px;
+  }
+  .serviceline {
+    width: 10rem;
+  }
+  .Footer {
+    font-size: 12px;
+  }
+  .Footer-bootom {
+    font-size: 8px;
+    gap: 0.5rem;
+  }
+}

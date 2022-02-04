@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}
+
+/* Nav section */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  padding: 10px;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: #d4d4d4;
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.9rem;
+  padding: 10px;
+}
+
+.menu ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+/* main section */
+.main {
+  display: flex;
+
+  margin: 20px;
+  padding: 30px;
+  background-color: #707070;
+  color: white;
+  justify-content: space-between;
+  gap: 1.9rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.9rem;
+}
+
+.right img {
+  width: 400px;
+  height: 350px;
+}
+
+/* card section */
+.card {
+  display: flex;
+  padding: 20px;
+  color: black;
+  justify-content: space-between;
+  gap: 1.9rem;
+}
+
+.card div {
+  background-color: #d4d4d4;
+  padding: 10px;
+}
+
+.card h3 {
+  color: #454545;
+}
+.card p {
+  color: #707070;
+}
+
+/* Footer section */
+.footer {
+  display: flex;
+  padding: 20px;
+  color: #8b8585;
+  justify-content: space-between;
+  gap: 1.9rem;
+}
+
+.footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.9rem;
+  padding: 10px;
+}
+
+.footer ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.footer a {
+  color: #8b8585;
+  font-weight: 800;
+  text-decoration: none;
+}
