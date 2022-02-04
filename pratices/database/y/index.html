@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Database Accessing</title>
+</head>
+
+<body>
+    <h1>Patients Table</h1>
+    <table id="demo">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>State</th>
+                <th>Pincode</th>
+                <th>Age</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBIJaA5hHOMBFSyiAjs1kLbXKdMuLo9pM0",
+        authDomain: "fir-8b901.firebaseapp.com",
+        projectId: "fir-8b901",
+        storageBucket: "fir-8b901.appspot.com",
+        messagingSenderId: "1070097075195",
+        appId: "1:1070097075195:web:cd3bbc3cce5e646411d95e"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    console.log(db)
+
+    // Get a list of users from your database
+    async function getusers(db) {
+        const patientCol = collection(db, 'patient');
+        const userSnapshot = await getDocs(patientCol);
+        const userList = userSnapshot.docs.map(doc => doc.data());
+        return userList;
+    }
+    let tempList = await getusers(db);
+    console.log("hey", tempList);
+
+    let tableObj = document.getElementById("demo")
+    let tempHTML = " ";
+
+    tempList.forEach(function (patient) {
+        {
+            let rowHTML = "<tr>";
+            rowHTML += "<td>" + patient.firstname + "</td>";
+            rowHTML += "<td>" + patient.lastname + "</td>";
+            rowHTML += "<td>" + patient.state + "</td>";
+            rowHTML += "<td>" + patient.pincode + "</td>";
+            rowHTML += "<td>" + patient.age + "</td>";
+            rowHTML += "<td>" + patient.phone + "</td>";
+            rowHTML += "</tr>";
+            tempHTML += rowHTML;
+        }
+
+        // table if else condition
+
+        // if(patient.age < 18){
+        //     let rowHTML = "<tr>";
+        //     rowHTML += "<td>" + patient.firstname + "</td>";
+        //     rowHTML += "<td>" + patient.lastname + "</td>";
+        //     rowHTML += "<td>" + patient.state + "</td>";
+        //     rowHTML += "<td>" + patient.pincode + "</td>";
+        //     rowHTML += "<td>" + patient.age + "</td>";
+        //     rowHTML += "<td>" + patient.phone + "</td>";
+        //     rowHTML += "</tr>";
+        //     tempHTML += rowHTML;
+        // }
+       
+       
+
+    });
+
+    tableObj.tBodies[0].innerHTML = tempHTML;
+    console.log(tableObj)
+
+
+
+
+</script>
+
+</html>
