@@ -21,3 +21,21 @@ td{
 
 }
 
+div{
+
+    display: flex;
+    margin: 50px 40%;
+    gap: 0.5rem;
+   
+}
+
+button{
+    padding: 10px;
+    background-color:thistle;
+    
+}
+a{
+    color : white;
+    text-decoration: none;
+}
+

@@ -13,13 +13,13 @@
     <h1>Patients Table</h1>
     <div>
         <button type="button">
-            <a href="upper.html">Age (upper-18)</a>
+            <a href="index.html">Show Full data</a>
         </button>
         <button type="button">
             <a href="lower.html">Age (lower-18)</a>
         </button>
     </div>
-   
+    
     <table id="demo">
         <thead>
             <tr>
@@ -73,6 +73,7 @@
     let tempHTML = " ";
 
     tempList.forEach(function (patient) {
+        if( patient.age > 18)
         {
             let rowHTML = "<tr>";
             rowHTML += "<td>" + patient.firstname + "</td>";
@@ -88,7 +89,6 @@
        
 
     })
-
 
 
 
