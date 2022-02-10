@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Data</title>
+    <style>
+        body {
+            background: rgb(34, 193, 195);
+            background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(100, 159, 151, 0.3449754901960784) 84%);
+        }
+
+        form {
+            background-color: white;
+            width: 400px;
+            padding: 40px;
+            margin: 50px 35%;
+            color: black;
+            border-radius: 2%;
+            font-size: 20px;
+        }
+
+        fieldset {
+            border: 2px solid black;
+            padding: 40px;
+        }
+
+        button {
+            background-color: #3b626f;
+            color: white;
+            padding: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        h1 {
+            color: white;
+            margin: 50px 42%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Form Data</h1>
+      
+    <form id="form">
+        <div style=" padding: 10px;">
+
+
+            <label for="firstname">First name</label>
+            <input required  placeholder="First name" id="firstname" name="firstname">
+            <br><br>
+            <label for="lastname">Last name</label>
+            <input required  placeholder="Last name" id="lastname" name="lastname">
+            <br><br>
+            <label for="age">Age</label>
+            <input required  type="number" placeholder="Age" name="age" id="age">
+            <br><br>
+            <label for="age">Phone</label>
+            <input required  placeholder="Only 10 digits allowed" type="tel" id="phone" name="phone">
+            <br> <br>
+            <label for="age">E-Mail</label>
+            <input required type="email" placeholder="example@mail.co" name="email" id="email">
+            <br> <br>
+            <label for="age">City</label>
+            <input required  maxlength="20" type="text" placeholder="City" id="city" name="city">
+            <br> <br>
+            <label for="age">Pincode</label>
+            <input required  type="text" id="pincode" placeholder="Pincode" name="pincode" maxlength="6" size="6">
+            <br> <br>
+            <button class="submit" type="submit">
+                submit
+            </button>
+
+        </div>
+    </form>
+
+</body>
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+    import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyD8AT5JhWa_R4C0GDCldgh1oblBeQcK8l0",
+        authDomain: "database-8d754.firebaseapp.com",
+        projectId: "database-8d754",
+        storageBucket: "database-8d754.appspot.com",
+        messagingSenderId: "571816246989",
+        appId: "1:571816246989:web:20186127c150be7ef17384"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    console.log(db)
+
+
+    // ADD DATA TO TABLE 
+    document.getElementById("form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        var formdata = new FormData(e.target);
+        let phone = formdata.get("phone");
+        let firstname = formdata.get("firstname");
+        let lastname = formdata.get("lastname");
+        let age = formdata.get("age");
+        let city = formdata.get("city");
+        let email = formdata.get("email");
+        let pincode = formdata.get("pincode");
+        
+
+
+        let text = "Are you sure you want to submit!\nEither OK or Cancel.";
+        if(confirm(text) == true){
+        await addDoc(collection(db, "users"), {
+            firstname: firstname,
+            lastname: lastname,
+            phone: phone,
+            age: age,
+            city: city,
+            email: email,
+            pincode: pincode
+        
+
+        });
+        let url = location.href;
+        location.href = "./index.html";
+        }
+
+
+    });
+
+
+
+
+</script>
+
+</html>

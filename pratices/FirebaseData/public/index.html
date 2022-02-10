@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Firebase Data</title>
+</head>
+
+<body>
+    <h1>Student Registration Data</h1>
+    <div class="add">
+        <button type="button">
+            <a href="add.html">Add Data</a>
+        </button>
+
+    </div>
+    <div class="line">
+        <table id="demo">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Phone</th>
+                    <th>E-Mail</th>
+                    <th>City</th>
+                    <th>Pincode</th>
+                    <th colspan="2">Control</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+
+
+<script type="module">
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+    import { getFirestore, collection, getDocs, deleteDoc,doc } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyD8AT5JhWa_R4C0GDCldgh1oblBeQcK8l0",
+        authDomain: "database-8d754.firebaseapp.com",
+        projectId: "database-8d754",
+        storageBucket: "database-8d754.appspot.com",
+        messagingSenderId: "571816246989",
+        appId: "1:571816246989:web:20186127c150be7ef17384"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    console.log(db)
+
+
+    // Get a list of users from your database
+    async function getusers(db) {
+        const patientCol = collection(db, 'users');
+        const userSnapshot = await getDocs(patientCol);
+        return  userSnapshot.docs.map(doc => {
+            const data = doc.data()
+            data.id = doc.id
+
+            return data;
+        });
+    }
+
+     let tempList = await getusers(db);
+    
+
+    // merging into table
+    let tableObj = document.getElementById("demo")
+
+    let tempHTML = " ";
+
+    tempList.map(function (patient, index) {
+        console.log("hello", index);
+        {
+            let rowHTML = "<tr>";
+            rowHTML += "<td>" + patient.firstname + "</td>";
+            rowHTML += "<td>" + patient.lastname + "</td>";
+            rowHTML += "<td>" + patient.age + "</td>";
+            rowHTML += "<td>" + patient.phone + "</td>";
+            rowHTML += "<td>" + patient.email + "</td>";
+            rowHTML += "<td>" + patient.city + "</td>";
+            rowHTML += "<td>" + patient.pincode + "</td>";
+            rowHTML += "<td>" + `<button type='button' class='edit' id= edit${index + 1}> Edit</button>` + "</td>";
+            rowHTML += "<td>" + `<button type='button'  class='delete' id= delete${index + 1}>delete</button>` + "</td>";
+            rowHTML += "</tr>";
+            tempHTML += rowHTML;
+
+
+        }
+
+
+    })
+
+
+    tableObj.tBodies[0].innerHTML = tempHTML;
+    console.log(tableObj)
+     
+    
+
+    
+    // delete the TABLE ROW
+ 
+    tempList.map((item, index) => {
+        var id = item.id;
+      
+         // DELETE button event
+        // console.log(item.id)
+        document.getElementById(`delete${index + 1}`).addEventListener("click", async function (e) {
+            e.preventDefault;
+            let text = "Are you sure you want to submit!\nEither OK or Cancel.";
+        if(confirm(text) == true){
+            await deleteDoc(doc(db,"users",id))
+            window.location.reload();
+        }
+           
+        })
+
+        // EDIT button event
+        document.getElementById(`edit${index + 1}`).addEventListener("click", async function (e) {
+            e.preventDefault;
+            console.log("hello",item);
+
+
+           
+            // SENDING DATA TO EDIT PAGE 
+            location.href = "./edit.html";
+            window.localStorage.setItem('user', JSON.stringify(item));
+        
+        //   window.location.href = "./edit.html?id=" + localStorage.setItem("testJson",json);
+           
+        })
+    })
+    
+
+
+    
+
+
+
+
+
+</script>
+
+</html>

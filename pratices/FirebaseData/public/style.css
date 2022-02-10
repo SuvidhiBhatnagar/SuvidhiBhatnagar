@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(34,193,195);
+    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(100,159,151,0.3449754901960784) 84%);
+}
+h1{
+    color: white;
+     margin: 50px 30%;
+     text-align: center;
+     font-size: 40px;
+}
+#demo{
+font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#demo td, #demo th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 20px;
+  }
+  #demo tr:hover {background-color: #ddd;}
+
+#demo th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3b626f;
+  color: white;
+}
+/* table{
+    width: 700px;
+    margin: 70px 0%;
+    font-size: 20px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    background-color:white;
+}
+th{
+    padding: 10px;
+    border: 1px solid black;
+}
+td{
+    padding: 10px;
+    border: 1px solid black;
+
+}*/
+
+div{
+   margin: 0px 30px;
+    display: flex;
+    gap: 0.5rem;
+   
+} 
+
+button{
+    margin: 20px 20px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #3b626f;
+    
+}
+a{
+    color : white;
+    text-decoration: none;
+}
+
+.edit{
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background-color: #3b626f;
+}
+.delete{
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background-color: #3b626f;
+}
