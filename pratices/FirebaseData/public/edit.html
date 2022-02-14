@@ -5,12 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Firebase Data</title>
     <style>
         body {
             background: rgb(34, 193, 195);
             background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(100, 159, 151, 0.3449754901960784) 84%);
         }
+
+        .header {
+            position: sticky;
+            cursor: pointer;
+            margin-left: 10%;
+          
+        }
+
 
         form {
             background-color: white;
@@ -29,6 +38,7 @@
 
         button {
             background-color: #3b626f;
+            cursor: pointer;
             color: white;
             padding: 8px;
         }
@@ -47,8 +57,17 @@
 
 <body>
     <h1>Form Data</h1>
+    <section class="header">
+        <button>
+            <i class="fas fa-chevron-left"></i>
+            <a href="index.html">Back</a>
+        </button>
+            
+   
+   
+    </section>
 
-    <form id="form" >
+    <form id="form">
         <div style=" padding: 10px;">
 
 
@@ -59,19 +78,19 @@
             <input required placeholder="Last name" id="lastname" name="lastname">
             <br><br>
             <label for="age">Age</label>
-            <input type="number" placeholder="Age" name="age" id="age">
+            <input required type="number" placeholder="Age" name="age" id="age">
             <br><br>
-            <label for="age">Phone</label>
-            <input placeholder="Only 10 digits allowed" type="tel" id="phone" name="phone">
+            <label for="phone">Phone</label>
+            <input required placeholder="Only 10 digits allowed" type="tel" id="phone" name="phone">
             <br> <br>
-            <label for="age">E-Mail</label>
-            <input type="email" placeholder="example@mail.co" name="email" id="email">
+            <label for="email">E-Mail</label>
+            <input required type="email" placeholder="example@mail.co" name="email" id="email">
             <br> <br>
-            <label for="age">City</label>
-            <input maxlength="20" type="text" placeholder="City" id="city" name="city">
+            <label for="city">City</label>
+            <input required maxlength="20" type="text" placeholder="City" id="city" name="city">
             <br> <br>
-            <label for="age">Pincode</label>
-            <input type="text" id="pincode" placeholder="Pincode" name="pincode" maxlength="6" size="6">
+            <label for="pincode">Pincode</label>
+            <input required type="text" id="pincode" placeholder="Pincode" name="pincode" maxlength="6" size="6">
             <br> <br>
             <button class="submit" type="submit">
                 update
@@ -105,19 +124,20 @@
         console.log(db)
 
 
-        
+
         // GETTING ITEM AND ID 
         var text = window.localStorage.getItem('user');
+        localStorage.clear();
         var obj = JSON.parse(text);
         var id = obj.id;
-      
+
 
 
 
         // DATABASE 
         const docRef = doc(db, "users", id);
         const docSnap = await getDoc(docRef);
-         
+
 
         // CHECKING CONDITIONS IF DATA & ID EXISTS OR NOT
         if (docSnap.exists()) {
@@ -136,9 +156,9 @@
             console.log("No such document!");
 
         }
-           
 
-    
+
+
 
         // UPDATE BUTTON
         document.getElementById("form").addEventListener("submit", async function (e) {
@@ -147,24 +167,26 @@
             let text = "Are you sure you want to submit!\nEither OK or Cancel.";
             if (confirm(text) == true) {
                 var id = obj.id;
-                await updateDoc(doc(db,'users',id), {
-                firstname: firstname.value,
-                lastname: lastname.value,
-                age: age.value,
-                phone: phone.value,
-                email: email.value,
-                city: city.value,
-                pincode: pincode.value
+                await updateDoc(doc(db, 'users', id), {
+                    firstname: firstname.value,
+                    lastname: lastname.value,
+                    age: age.value,
+                    phone: phone.value,
+                    email: email.value,
+                    city: city.value,
+                    pincode: pincode.value
 
 
                 });
                 let url = location.href;
                 location.href = "./index.html";
-                
+
             }
 
 
         })
+      
+
 
 
     </script>

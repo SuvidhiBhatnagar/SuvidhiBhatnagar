@@ -12,6 +12,14 @@
             background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(100, 159, 151, 0.3449754901960784) 84%);
         }
 
+        .header {
+            position: sticky;
+            cursor: pointer;
+            margin-left: 10%;
+
+        }
+
+
         form {
             background-color: white;
             width: 400px;
@@ -42,36 +50,57 @@
             color: white;
             margin: 50px 42%;
         }
+
+        .error {
+            color: red;
+        }
     </style>
 </head>
 
 <body>
     <h1>Form Data</h1>
-      
+    <section class="header">
+        <button>
+            <i class="fas fa-chevron-left"></i>
+            <a href="index.html">Back</a>
+        </button>
+
+
+
+    </section>
+
+
     <form id="form">
         <div style=" padding: 10px;">
 
 
             <label for="firstname">First name</label>
-            <input required  placeholder="First name" id="firstname" name="firstname">
+            <input autofocus placeholder="First name" id="firstname" name="firstname">
+            <div id="first_error" class="error hidden"></div>
             <br><br>
             <label for="lastname">Last name</label>
-            <input required  placeholder="Last name" id="lastname" name="lastname">
+            <input placeholder="Last name" id="lastname" name="lastname">
+            <div id="last_error" class="error hidden"></div>
             <br><br>
             <label for="age">Age</label>
-            <input required  type="number" placeholder="Age" name="age" id="age">
+            <input type="text" maxlength="3" placeholder="Age" name="age" id="age">
+            <div id="age_error" class="error hidden"> </div>
             <br><br>
-            <label for="age">Phone</label>
-            <input required  placeholder="Only 10 digits allowed" type="tel" id="phone" name="phone">
+            <label for="phone">Phone</label>
+            <input placeholder="Only 10 digits allowed" type="text" id="phone" name="phone">
+            <div id="phone_error" class="error hidden"></div>
             <br> <br>
-            <label for="age">E-Mail</label>
-            <input required type="email" placeholder="example@mail.co" name="email" id="email">
+            <label for="email">E-Mail</label>
+            <input type="email" placeholder="example@mail.com" name="email" id="email">
+            <div id="email_error" class="error hidden"></div>
             <br> <br>
-            <label for="age">City</label>
-            <input required  maxlength="20" type="text" placeholder="City" id="city" name="city">
+            <label for="city">City</label>
+            <input maxlength="10" type="text" placeholder="City" id="city" name="city">
+            <div id="city_error" class="error hidden"></div>
             <br> <br>
-            <label for="age">Pincode</label>
-            <input required  type="text" id="pincode" placeholder="Pincode" name="pincode" maxlength="6" size="6">
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" placeholder="Pincode" name="pincode" maxlength="6" size="6">
+            <div id="pincode_error" class="error hidden"></div>
             <br> <br>
             <button class="submit" type="submit">
                 submit
@@ -106,9 +135,17 @@
     console.log(db)
 
 
+
+
+
     // ADD DATA TO TABLE 
-    document.getElementById("form").addEventListener("submit", async function (e) {
+    form.addEventListener("submit", async function (e) {
+        console.log('hey');
         e.preventDefault();
+
+
+
+
         var formdata = new FormData(e.target);
         let phone = formdata.get("phone");
         let firstname = formdata.get("firstname");
@@ -117,28 +154,74 @@
         let city = formdata.get("city");
         let email = formdata.get("email");
         let pincode = formdata.get("pincode");
-        
+
+        // var phone_input = document.getElementById("phone");
 
 
+
+
+
+
+        // let lable = []
         let text = "Are you sure you want to submit!\nEither OK or Cancel.";
-        if(confirm(text) == true){
-        await addDoc(collection(db, "users"), {
-            firstname: firstname,
-            lastname: lastname,
-            phone: phone,
-            age: age,
-            city: city,
-            email: email,
-            pincode: pincode
-        
 
-        });
-        let url = location.href;
-        location.href = "./index.html";
+
+        if (firstname != "" && lastname != "" && age != "" && phone !=""  && city !="" && email !=""  && pincode !="" ) {
+            if (confirm(text) == true) {
+                await addDoc(collection(db, "users"), {
+                    firstname: firstname,
+                    lastname: lastname,
+                    phone: phone,
+                    age: age,
+                    city: city,
+                    email: email,
+                    pincode: pincode
+
+
+                })
+                let url = location.href;
+                location.href = "./index.html";
+
+            } ; 
         }
+        else {
+            if (firstname == "") {
+                document.getElementById("first_error").innerHTML = "First name should not be blank"
+            }
+            if (lastname == "") {
+                document.getElementById("last_error").innerHTML = "Last name should not be blank"
+            }
+            if (age == "") {
+                document.getElementById("age_error").innerHTML = "age should not be blank"
+            }
+            if (phone == "") {
+                document.getElementById("phone_error").innerHTML = "Please enter a valid phone number 10 digits"
+            }
+            if (city == "") {
+                document.getElementById("city_error").innerHTML = "city should not be blank"
+            }
+            if (email == "") {
+                document.getElementById("email_error").innerHTML = "Please enter a valid email address"
+            }
+            if (pincode == "") {
+                document.getElementById("pincode_error").innerHTML = "Please enter a valid pincode"
+            }
 
 
-    });
+
+
+        };
+
+    })
+
+
+
+
+
+
+
+
+
 
 
 

@@ -9,7 +9,7 @@ body{
 }
 h1{
     color: white;
-     margin: 50px 30%;
+     margin: 50px 20%;
      text-align: center;
      font-size: 40px;
 }
@@ -61,6 +61,7 @@ button{
     margin: 20px 20px;
     padding: 10px;
     font-size: 15px;
+    cursor: pointer;
     background-color: #3b626f;
     
 }
