@@ -81,16 +81,16 @@
             <input required type="number" placeholder="Age" name="age" id="age">
             <br><br>
             <label for="phone">Phone</label>
-            <input required placeholder="Only 10 digits allowed" type="tel" id="phone" name="phone">
+            <input required placeholder="Only 10 digits allowed" type="tel" id="phone" name="phone" pattern="[0-9]{10}" autocomplete="off"  oninvalid="this.setCustomValidity('Please Enter 10 digit numbers')">
             <br> <br>
             <label for="email">E-Mail</label>
-            <input required type="email" placeholder="example@mail.co" name="email" id="email">
+            <input required type="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="example@mail.co" autocomplete="off" name="email" id="email"  oninvalid="this.setCustomValidity('Enter format example@mail.in')">
             <br> <br>
             <label for="city">City</label>
             <input required maxlength="20" type="text" placeholder="City" id="city" name="city">
             <br> <br>
             <label for="pincode">Pincode</label>
-            <input required type="text" id="pincode" placeholder="Pincode" name="pincode" maxlength="6" size="6">
+            <input required type="text" autocomplete="off" id="pincode" placeholder="Pincode" name="pincode" maxlength="6" size="6" oninvalid="this.setCustomValidity('Enter 6 digits pincode')">
             <br> <br>
             <button class="submit" type="submit">
                 update
@@ -164,7 +164,7 @@
         document.getElementById("form").addEventListener("submit", async function (e) {
             e.preventDefault();
             // console.log("hello",obj);
-            let text = "Are you sure you want to submit!\nEither OK or Cancel.";
+            let text = "Are you sure you want to update!\nEither OK or Cancel.";
             if (confirm(text) == true) {
                 var id = obj.id;
                 await updateDoc(doc(db, 'users', id), {
