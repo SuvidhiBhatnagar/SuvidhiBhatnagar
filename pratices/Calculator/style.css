@@ -52,4 +52,6 @@ button{
 .equal{
     width: 115px;
     border-radius: 40px ;
+    background-color: #fb9527;
+    font-size: 30px;
 }
