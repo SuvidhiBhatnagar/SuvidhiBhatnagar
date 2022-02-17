@@ -14,28 +14,67 @@ h1{
 }
 .container{
     padding: 20px;
-    margin:  20%;
+    margin:  12% 30%;
     text-align: center;
     background-color: #35c3e5;;
 
 }
-ul{
+/* ul{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     gap: 0.5rem;
-}
+    color: red;
+    font-size: 20px;
+} */
 
-#btn{
+#add{
     padding: 10px;
     color: white;
     background-color: #397ab9;
 }
+button{
+    padding: 5px;
+    color: white;
+    background-color: #397ab9;
+}
+
 
 li{
-    color: white;
+    color: #397ab9;
    list-style-type: none;
+   font-size: 20px;
+ 
 }
 input{
     padding: 10px;
+}
+.a{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+  
+}
+#mylist{
+    
+    margin-top: 10px;
+    padding: 10px;
+  
+}
+.checked{
+    width: 30px;
+    height: 20px;
+}
+ul{
+    padding: 10px;
+   background-color: lightcyan;
+   margin-top: 10px;
+}
+.left{
+    display: flex;
+    align-items: center;
+}
+.strike {
+    text-decoration: line-through;
 }
