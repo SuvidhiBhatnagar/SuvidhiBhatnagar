@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>List display</title>
+</head>
+
+<body>
+    <h1>Student Registration Data</h1>
+    <div class="add">
+        <!-- <button type="button">
+            <a href="add.html">Add Data</a>
+        </button> -->
+
+    </div>
+    <div class="line">
+        <table id="demo">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id="display"></div>
+
+
+</body>
+<script>
+
+    const displaylist = document.querySelector('#display');
+
+
+
+function resetTable(){
+    fetch('http://localhost:3000/')
+            .then( async function (response) {
+                let data = await  response.json()
+                show(data.users)    
+            })
+                    
+       
+}
+resetTable();
+
+async function show(users){
+    console.log(users);
+
+    let tableObj = document.getElementById("demo")
+    let tempHTML = " ";
+
+    users.map(function (patient,index) {
+        // console.log("hello", index);
+        {
+            let rowHTML = "<tr>";
+            rowHTML += "<td>" + patient.firstname + "</td>";
+            rowHTML += "<td>" + patient.lastname + "</td>";
+            rowHTML += "<td>" + patient.age + "</td>";
+            rowHTML += "</tr>";
+            tempHTML += rowHTML;
+
+
+        }
+
+
+    })
+
+
+    tableObj.tBodies[0].innerHTML = tempHTML;
+
+
+}
+
+
+
+
+
+
+
+    // let tempList =  resetTable();
+    // console.log("hey", tempList);
+
+
+    // let tableObj = document.getElementById("demo")
+
+    // let tempHTML = " ";
+
+    // tempList.forEach(function (users) {
+    //     {
+    //         let rowHTML = "<tr>";
+    //         rowHTML += "<td>" + users.firstname + "</td>";
+    //         rowHTML += "<td>" + users.lastname + "</td>";
+    //         rowHTML += "<td>" + users.age + "</td>";
+    //         rowHTML += "</tr>";
+    //         tempHTML += rowHTML;
+    //     }
+       
+       
+
+    // })
+
+
+
+
+    // tableObj.tBodies[0].innerHTML = tempHTML;
+
+</script>
+
+</html>

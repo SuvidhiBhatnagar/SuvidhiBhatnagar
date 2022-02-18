@@ -62,7 +62,7 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-    console.log(db)
+    // console.log(db)
 
 
     // Get a list of users from your database
@@ -82,13 +82,19 @@
     let tempList = await getusers(db);
 
 
+  
+
+
+
+
+
     // merging into table
     let tableObj = document.getElementById("demo")
 
     let tempHTML = " ";
 
     tempList.map(function (patient, index) {
-        console.log("hello", index);
+        // console.log("hello", index);
         {
             let rowHTML = "<tr>";
             rowHTML += "<td>" + patient.firstname + "</td>";
@@ -111,14 +117,14 @@
 
 
     tableObj.tBodies[0].innerHTML = tempHTML;
-    console.log(tableObj)
+    // console.log(tableObj)
 
 
 
     // created two events
     // delete the TABLE ROW
     tempList.map((item, index) => {
-        console.log("item", item);
+        // console.log("item", item);
         var id = item.id;
 
         // DELETE button event
@@ -136,7 +142,7 @@
         // EDIT button event
         document.getElementById(`edit${index + 1}`).addEventListener("click", async function (e) {
             e.preventDefault;
-            console.log("hello", item);
+            // console.log("hello", item);
 
 
 
@@ -151,6 +157,8 @@
     })
 
     function resetTable() {
+        
+
         // window.location.reload();
         //or use :  var table = document.all.tableid;
         // for (var i = table.rows.length - 1; i > 0; i--) {

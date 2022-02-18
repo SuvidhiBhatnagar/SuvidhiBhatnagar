@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(34,193,195);
+    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(100,159,151,0.3449754901960784) 84%);
+}
+h1{
+    color: white;
+     margin: 50px 20%;
+     text-align: center;
+     font-size: 40px;
+}
+#demo{
+font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#demo td, #demo th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 20px;
+  }
+  #demo tr:hover {background-color: #ddd;}
+
+#demo th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3b626f;
+  color: white;
+}
+
+div{
+    margin: 0px 30px;
+     display: flex;
+     gap: 0.5rem;
+    
+ } 
