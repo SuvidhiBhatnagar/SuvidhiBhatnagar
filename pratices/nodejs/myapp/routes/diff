@@ -1,0 +1,35 @@
+//  <div id="text" contenteditable="true"></div>
+//     <button id="button">toggle bold</button>
+
+
+// document.getElementById("button").addEventListener("click",function(e){
+//   e.preventDefault();
+//   document.execCommand('formatBlock', false, 'h1');
+
+// })
+
+
+
+// return new Promise((resolve, reject) => {
+//             var formdata = new FormData(document.getElementById('form'))
+//             fetch('http://localhost:3000/'), {
+//                 method: 'POST',
+//                 headers: {
+//                     'Accept': 'application/json',
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({
+//                     first_name: formdata.get("firstname"),
+//                     last_name: formdata.get("lastname"),
+//                     age: formdata.get("age"),
+//                     gender: formdata.get("gender")
+
+//                 })
+//             }
+//         }).then(function (response) {
+//             return response.json();
+//         }).then(function (data) {
+//             resolve(data);
+//         }).then(function (err) {
+//             reject(err);
+//         })

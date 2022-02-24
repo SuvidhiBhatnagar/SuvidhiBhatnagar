@@ -39,3 +39,17 @@ div{
      gap: 0.5rem;
     
  } 
+
+ button{
+  margin: 20px 20px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #3b626f;
+  
+}
+
+ a{
+  color : white;
+  text-decoration: none;
+}

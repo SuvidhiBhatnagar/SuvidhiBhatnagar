@@ -12,105 +12,137 @@
 <body>
     <h1>Student Registration Data</h1>
     <div class="add">
-        <!-- <button type="button">
+        <button type="button">
             <a href="add.html">Add Data</a>
-        </button> -->
+        </button>
 
     </div>
     <div class="line">
         <table id="demo">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Age</th>
+                    <th>Gender</th>
+                    <th colspan="2">Control</th>
                 </tr>
             </thead>
             <tbody>
             </tbody>
         </table>
     </div>
-    <div id="display"></div>
-
 
 </body>
 <script>
 
-    const displaylist = document.querySelector('#display');
 
 
 
-function resetTable(){
-    fetch('http://localhost:3000/')
-            .then( async function (response) {
-                let data = await  response.json()
-                show(data.users)    
+    // table
+    function resetTable() {
+        fetch('http://localhost:3000/')
+            .then(async function (response) {
+                let data = await response.json()
+                console.log(data);
+                show(data)
+
             })
-                    
-       
-}
-resetTable();
 
-async function show(users){
-    console.log(users);
-
-    let tableObj = document.getElementById("demo")
-    let tempHTML = " ";
-
-    users.map(function (patient,index) {
-        // console.log("hello", index);
-        {
-            let rowHTML = "<tr>";
-            rowHTML += "<td>" + patient.firstname + "</td>";
-            rowHTML += "<td>" + patient.lastname + "</td>";
-            rowHTML += "<td>" + patient.age + "</td>";
-            rowHTML += "</tr>";
-            tempHTML += rowHTML;
+    }
+    resetTable();
 
 
-        }
+    async function deleteUsers(id) {
+        const response = await fetch(`http://localhost:3000/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: id
+            })
+        });
+
+        response.json().then(data => {
+            console.log(data);
+        });
+    }
 
 
-    })
+    // show list
+    async function show(users) {
+
+        let tableObj = document.getElementById("demo")
+        let tempHTML = " ";
+
+        users.map(function (user, index) {
+            // console.log("hello", index);
+            {
+                let rowHTML = "<tr>";
+                rowHTML += "<td>" + user.id + "</td>";
+                rowHTML += "<td>" + user.first_name + "</td>";
+                rowHTML += "<td>" + user.last_name + "</td>";
+                rowHTML += "<td>" + user.age + "</td>";
+                rowHTML += "<td>" + user.gender + "</td>";
+                rowHTML += "<td>" + `<button type='button' class='edit' id= edit${index + 1}> Edit</button>` + "</td>";
+                rowHTML += "<td>" + `<button type='button'  class='delete' id= delete${index + 1}>delete</button>` + "</td>";
+                rowHTML += "</tr>";
+                tempHTML += rowHTML;
 
 
-    tableObj.tBodies[0].innerHTML = tempHTML;
+            }
 
 
-}
+        })
 
 
-
-
-
-
-
-    // let tempList =  resetTable();
-    // console.log("hey", tempList);
-
-
-    // let tableObj = document.getElementById("demo")
-
-    // let tempHTML = " ";
-
-    // tempList.forEach(function (users) {
-    //     {
-    //         let rowHTML = "<tr>";
-    //         rowHTML += "<td>" + users.firstname + "</td>";
-    //         rowHTML += "<td>" + users.lastname + "</td>";
-    //         rowHTML += "<td>" + users.age + "</td>";
-    //         rowHTML += "</tr>";
-    //         tempHTML += rowHTML;
-    //     }
-       
-       
-
-    // })
+        tableObj.tBodies[0].innerHTML = tempHTML;
 
 
 
+        users.map((item, index) => {
+            // console.log("item", item);
+            var id = item.id;
 
-    // tableObj.tBodies[0].innerHTML = tempHTML;
+
+            // DELETE button event
+            // console.log(item.id)
+            document.getElementById(`delete${index + 1}`).addEventListener("click", async function (e) {
+                e.preventDefault;
+                console.log(id);
+                let text = "Are you sure you want to submit!\nEither OK or Cancel.";
+                if (confirm(text) == true) {
+                    deleteUsers(id);
+                    window.location.reload();
+                }
+
+            })
+
+            // EDIT button event
+            // document.getElementById(`edit${index + 1}`).addEventListener("click", async function (e) {
+            //     e.preventDefault;
+            //     // console.log("hello", item);
+
+
+
+            //     // SENDING DATA TO EDIT PAGE 
+            //     location.href = "./edit.html";
+            //     window.localStorage.setItem('user', JSON.stringify(item));
+
+
+            //     //   window.location.href = "./edit.html?id=" + localStorage.setItem("testJson",json);
+
+            // })
+        })
+
+
+    }
+
+
+
 
 </script>
 

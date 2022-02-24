@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Data</title>
+    <style>
+        body {
+            background: rgb(34, 193, 195);
+            background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(100, 159, 151, 0.3449754901960784) 84%);
+        }
+
+        .header {
+            position: sticky;
+            cursor: pointer;
+            margin-left: 10%;
+
+        }
+
+
+        form {
+            background-color: white;
+            width: 400px;
+            padding: 40px;
+            margin: 50px 35%;
+            color: black;
+            border-radius: 2%;
+            font-size: 20px;
+        }
+
+        fieldset {
+            border: 2px solid black;
+            padding: 40px;
+        }
+
+        button {
+            background-color: #3b626f;
+            color: white;
+            padding: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        h1 {
+            color: white;
+            margin: 50px 42%;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Form Data</h1>
+    <section class="header">
+        <button>
+            <i class="fas fa-chevron-left"></i>
+            <a href="index.html">Back</a>
+        </button>
+
+
+
+    </section>
+
+
+    <form id="form">
+        <div style=" padding: 10px;">
+
+
+            <label for="firstname">First name</label>
+            <input autofocus placeholder="First name" id="firstname" name="firstname">
+            <div id="first_error" class="error hidden"></div>
+            <br><br>
+            <label for="lastname">Last name</label>
+            <input placeholder="Last name" id="lastname" name="lastname">
+            <div id="last_error" class="error hidden"></div>
+            <br><br>
+            <label for="age">Age</label>
+            <input type="text" maxlength="3" placeholder="Age" name="age" id="age">
+            <div id="age_error" class="error hidden"> </div>
+            <br><br>
+            <label for="gender">Gender</label>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <div id="phone_error" class="error hidden"></div>
+            <br> <br>
+            <button class="submit" type="submit">
+                submit
+            </button>
+
+        </div>
+    </form>
+
+</body>
+
+
+<script>
+
+
+    async function addUsers() {
+        var formdata = new FormData(document.getElementById('form'))
+        const response = await fetch("http://localhost:3000/", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                first_name: formdata.get("firstname"),
+                last_name: formdata.get("lastname"),
+                age: formdata.get("age"),
+                gender: formdata.get("gender")
+
+            })
+        });
+
+        response.json().then(data => {
+            console.log("sss");
+        });
+    }
+
+
+
+    // ADD DATA TO TABLE 
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+
+        console.log('hey');
+        let text = "Are you sure you want to submit!\nEither OK or Cancel.";
+
+        if (confirm(text) == true) {
+            addUsers();
+
+
+            let url = location.href;
+            location.href = "./index.html";
+        }
+
+
+
+
+
+        // var formdata = new FormData(e.target);
+        // let phone = formdata.get("phone");
+        // let firstname = formdata.get("firstname");
+
+        // let age = formdata.get("age");
+        // let city = formdata.get("city");
+        // let email = formdata.get("email");
+        // let pincode = formdata.get("pincode");
+
+        // var phone_input = document.getElementById("phone");
+
+
+
+
+
+
+        // // let lable = []
+
+
+
+        // if (firstname != "" && lastname != "" && age != "" && phone != "" && city != "" && email != "" && pincode != "") {
+        //     if (confirm(text) == true) {
+        //         addUsers();
+        //         // await addDoc(collection(db, "users"), {
+        //         //     firstname: firstname,
+        //         //     lastname: lastname,
+        //         //     phone: phone,
+        //         //     age: age,
+        //         //     city: city,
+        //         //     email: email,
+        //         //     pincode: pincode
+
+
+        //         // })
+
+        //         // let url = location.href;
+        //         // location.href = "./index.html";
+
+        //     };
+        // }
+        // else {
+        //     if (firstname == "") {
+        //         document.getElementById("first_error").innerHTML = "First name should not be blank"
+        //     }
+        //     if (lastname == "") {
+        //         document.getElementById("last_error").innerHTML = "Last name should not be blank"
+        //     }
+        //     if (age == "") {
+        //         document.getElementById("age_error").innerHTML = "age should not be blank"
+        //     }
+        //     if (phone == "") {
+        //         document.getElementById("phone_error").innerHTML = "Please enter a valid phone number 10 digits"
+        //     }
+        //     if (city == "") {
+        //         document.getElementById("city_error").innerHTML = "city should not be blank"
+        //     }
+        //     if (email == "") {
+        //         document.getElementById("email_error").innerHTML = "Please enter a valid email address"
+        //     }
+        //     if (pincode == "") {
+        //         document.getElementById("pincode_error").innerHTML = "Please enter a valid pincode"
+        //     }
+
+
+
+
+        // };
+
+    })
+
+
+
+
+
+</script>
+
+</html>

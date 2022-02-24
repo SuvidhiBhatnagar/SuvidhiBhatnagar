@@ -30,7 +30,7 @@ function showlist() {
         <div class="left">
         <input type="hidden" id="save" />
         
-        <input  type="checkbox" id="checkedbox"  onclick='checkedlist(${index})'  class='checked'>
+     
         <li class='list'>${list}</li>
         </div>
         <div class="right">
@@ -115,50 +115,35 @@ save.addEventListener("click", () => {
 });
 
 
-done.addEventListener('click', function(){ 
-    txt.style.textDecoration = "line-through";
-  }) 
+// checkedlist.addEventListener('click', function(index){ 
+//     e.target.closest('li').style.textDecoration = "line-through";
+//     // txt.style.textDecoration = "line-through";
+//   }) 
 
-  done.addEventListener('click', function(e){ 
-    e.target.closest('li').style.textDecoration = "line-through";
-  })  
-
-
-
-
-function checkedlist(index) {
-    // var check = document.querySelector('.checked');
-    // check("input[type=checkbox]")
-    // var checkBoxs=checkedbox.querySelector("input[type=checkbox]");
-    let todo = localStorage.getItem("todo");
-    // console.log(todo);
-    List = JSON.parse(todo);
-
-    let ind = index
-    console.log(ind);
-
-    ind.style.textDecoration = "underline overline";
+//   done.addEventListener('click', function(e){ 
+//     e.target.closest('li').style.textDecoration = "line-through";
+//   })  
 
 
-   
-    // console.log(ind);
-
-    // if( checked=""){
-
-    // }
-
-    // String.prototype.strike = function() {
-    //     return '<div class="strike">'+ this +'</div>';
-    // };
-
-    // List.strike(ind)
-    // List.strike(index);
-    // checkBox.onchange=checkBoxEventHandler;
 
 
-    // <div class="strike"> hello world! </div>
-    // var test = 'hello world!'.strike();
+// function checkedlist(index) {
+//     var list = document.getElementsByClassName('list')
+//     // var check = document.querySelector('.checked');
+//     // check("input[type=checkbox]")
+//     // var checkBoxs=checkedbox.querySelector("input[type=checkbox]");
+//     let todo = localStorage.getItem("todo");
+//     // console.log(todo);
+//     List = JSON.parse(todo);
+    
+//     txt = list[index]
+    
+//     console.log(txt);
 
-    localStorage.setItem("todo", JSON.stringify(List));
-    showlist();
-}
+ 
+//         list.style.textDecoration = "line-through";
+  
+
+//     localStorage.setItem("todo", JSON.stringify(List));
+//     showlist();
+// }

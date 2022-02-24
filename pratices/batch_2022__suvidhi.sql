@@ -42,4 +42,7 @@ UPDATE `users` SET `created_at` = CURRENT_TIME() WHERE `users`.`id` BETWEEN 1 AN
 SELECT MAX(views) as max_views FROM `posts` WHERE (views)>40;
 
 
+--INNER JOINS
+
+
 
